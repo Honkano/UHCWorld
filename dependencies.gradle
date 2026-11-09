@@ -1,0 +1,72 @@
+/*
+ * 这里是模组依赖声明区。下面先解释各配置的含义，再放本项目实际使用的依赖。
+ *
+ * 配置速查（本项目目前只用到 compile files，其余是给你以后加依赖时参考）：
+ *
+ *  - api("g:n:v:c")
+ *      依赖的类型会出现在本模组对外 API 的方法签名里时用。
+ *      下游模组在编译期和运行期都能看到它。
+ *      本项目没有对外 API，暂时用不到。
+ *
+ *  - implementation("g:n:v:c")
+ *      仅本模组内部实现使用、不暴露给下游的类型用这个。
+ *      本模组运行期可见，下游编译期不可见。
+ *      本地 files(...) 依赖本质上也是这个效果（不会发布给下游）。
+ *
+ *  - compileOnly("g:n:v:c")
+ *      编译期需要、运行期完全不需要的依赖（典型：可选模组的集成代码）。
+ *      本模组编译期可见，运行期不可见，也不会发布给下游。
+ *
+ *  - compileOnlyApi("g:n:v:c")
+ *      类似 compileOnly，但下游模组编译期也能看到。
+ *      注意：它会被发布成 Maven 依赖，但运行期仍然不提供。
+ *
+ *  - runtimeOnlyNonPublishable("g:n:v:c")
+ *      只想让 runClient/runServer 运行时里有这个模组，但不把它发布成依赖。
+ *      本模组运行期可见，编译期不可见，下游完全看不到。
+ *      适合“测试时想有 NEI，但代码不 import NEI 类”的情况。
+ *
+ *  - devOnlyNonPublishable("g:n:v:c")
+ *      runtimeOnlyNonPublishable + compileOnly 的组合：
+ *      编译期和运行期都可见，但不发布成 Maven 依赖。
+ *      适合 RFG 反混淆依赖或本地测试用。
+ *
+ *  - runtimeOnly("g:n:v:c")
+ *      编译期不需要、运行期需要，并且会作为运行期依赖发布给下游。
+ *
+ *  - annotationProcessor("g:n:v:c")
+ *      给 Java 编译期插件/注解处理器用的，不确定需要就别加。
+ *
+ *  - testCONFIG("g:n:v:c")
+ *      把上面的 CONFIG 换成具体配置名（api 除外），作用相同，但只作用于测试源码。
+ *
+ *  - shadowImplementation("g:n:v:c")
+ *      效果类似 api，但依赖会被重命名包名后打进你自己的 jar。
+ *      需要先在 gradle.properties 里打开 usesShadowedDependencies。
+ *      本项目没开 shadow，暂不使用。
+ *
+ *  - compile("g:n:v:c")
+ *      已弃用的旧写法。能用，但新代码建议换成 api 或 implementation。
+ *      本项目下面两行仍在用 compile files(...)，见行内说明。
+ *
+ * 排除传递依赖：在坐标后加 { transitive = false }。
+ * 慎用，排不好会让“别人把你的模组当依赖”时缺类。
+ *
+ * 依赖混淆 jar（obf jar）的写法：
+ *  - 从 Maven 拉：devOnlyNonPublishable(rfg.deobf("dep:spec:1.2.3"))
+ *  - 用本地文件：devOnlyNonPublishable(rfg.deobf(project.files("libs/my-mod-jar.jar")))
+ * 本项目用的是已经反混淆好的 -deobf- jar，所以不需要再套 rfg.deobf。
+ *
+ * 注意 Gradle 配置名有容易误解的地方：
+ * compileOnlyApi 和 runtimeOnly 都会作为依赖发布到 Maven，compileOnly 不会。
+ * 本构建脚本额外提供了 runtimeOnlyNonPublishable，用来表达“运行期有、但不发布”。
+ *
+ * 官方配置说明：
+ * https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
+ */
+dependencies {
+
+
+
+ devOnlyNonPublishable(rfg.deobf(project.files("libs/worldedit-1.7.10-6.1.1.jar")))
+}

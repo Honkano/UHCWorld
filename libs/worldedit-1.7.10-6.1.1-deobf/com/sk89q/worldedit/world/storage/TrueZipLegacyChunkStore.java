@@ -1,0 +1,92 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.sk89q.worldedit.world.storage;
+
+import com.sk89q.worldedit.world.DataException;
+import com.sk89q.worldedit.world.storage.LegacyChunkStore;
+import com.sk89q.worldedit.world.storage.MissingChunkException;
+import de.schlichtherle.util.zip.ZipEntry;
+import de.schlichtherle.util.zip.ZipFile;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.regex.Pattern;
+import java.util.zip.ZipException;
+
+public class TrueZipLegacyChunkStore
+extends LegacyChunkStore {
+    private File zipFile;
+    private ZipFile zip;
+    private String folder;
+
+    public TrueZipLegacyChunkStore(File zipFile, String folder) throws IOException, ZipException {
+        this.zipFile = zipFile;
+        this.folder = folder;
+        this.zip = new ZipFile(zipFile);
+    }
+
+    public TrueZipLegacyChunkStore(File zipFile) throws IOException, ZipException {
+        this.zipFile = zipFile;
+        this.zip = new ZipFile(zipFile);
+    }
+
+    @Override
+    protected InputStream getInputStream(String f1, String f2, String name) throws IOException, DataException {
+        ZipEntry entry;
+        String file = f1 + "/" + f2 + "/" + name;
+        if (this.folder != null) {
+            if (!this.folder.equals("")) {
+                file = this.folder + "/" + file;
+            }
+        } else {
+            ZipEntry testEntry = this.zip.getEntry("level.dat");
+            if (testEntry == null) {
+                testEntry = this.getEntry("world/level.dat");
+                Pattern pattern = Pattern.compile(".*[\\\\/]level\\.dat$");
+                if (testEntry == null) {
+                    Enumeration e = this.zip.entries();
+                    while (e.hasMoreElements()) {
+                        testEntry = (ZipEntry)e.nextElement();
+                        if (!pattern.matcher(testEntry.getName()).matches()) continue;
+                        this.folder = testEntry.getName().replaceAll("level\\.dat$", "");
+                        this.folder = this.folder.substring(0, this.folder.length() - 1);
+                        file = this.folder + file;
+                        break;
+                    }
+                } else {
+                    file = "world/" + file;
+                }
+            }
+        }
+        if ((entry = this.getEntry(file)) == null) {
+            throw new MissingChunkException();
+        }
+        try {
+            return this.zip.getInputStream(entry);
+        }
+        catch (ZipException e) {
+            throw new IOException("Failed to read " + file + " in ZIP");
+        }
+    }
+
+    private ZipEntry getEntry(String file) {
+        ZipEntry entry = this.zip.getEntry(file);
+        if (entry != null) {
+            return entry;
+        }
+        return this.zip.getEntry(file.replace("/", "\\"));
+    }
+
+    @Override
+    public void close() throws IOException {
+        this.zip.close();
+    }
+
+    @Override
+    public boolean isValid() {
+        return true;
+    }
+}
+

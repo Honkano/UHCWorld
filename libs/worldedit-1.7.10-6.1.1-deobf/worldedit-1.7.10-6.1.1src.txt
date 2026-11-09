@@ -1,0 +1,946 @@
+﻿目录树: C:\Users\Administrator\Desktop\工作库\空太工作库\UhcWorld\libs\worldedit-1.7.10-6.1.1-deobf
+生成时间: 2026-11-09 21:39:21
+============================================================
+├── net/
+│   ├── royawesome/
+│   │   └── jlibnoise/
+│   │       ├── module/
+│   │       │   ├── source/
+│   │       │   │   ├── Voronoi.java
+│   │       │   │   ├── Spheres.java
+│   │       │   │   ├── RidgedMulti.java
+│   │       │   │   ├── Perlin.java
+│   │       │   │   ├── Cylinders.java
+│   │       │   │   ├── Const.java
+│   │       │   │   ├── Checkerboard.java
+│   │       │   │   └── Billow.java
+│   │       │   ├── modifier/
+│   │       │   │   ├── Turbulence.java
+│   │       │   │   ├── TranslatePoint.java
+│   │       │   │   ├── Terrace.java
+│   │       │   │   ├── ScalePoint.java
+│   │       │   │   ├── ScaleBias.java
+│   │       │   │   ├── RotatePoint.java
+│   │       │   │   ├── Invert.java
+│   │       │   │   ├── Exponent.java
+│   │       │   │   ├── Curve.java
+│   │       │   │   ├── Clamp.java
+│   │       │   │   └── Abs.java
+│   │       │   ├── combiner/
+│   │       │   │   ├── Select.java
+│   │       │   │   ├── Power.java
+│   │       │   │   ├── Multiply.java
+│   │       │   │   ├── Min.java
+│   │       │   │   ├── Max.java
+│   │       │   │   ├── Displace.java
+│   │       │   │   ├── Blend.java
+│   │       │   │   └── Add.java
+│   │       │   ├── Module.java
+│   │       │   └── Cache.java
+│   │       ├── model/
+│   │       │   ├── Sphere.java
+│   │       │   ├── Plane.java
+│   │       │   ├── Line.java
+│   │       │   └── Cylinder.java
+│   │       ├── exception/
+│   │       │   ├── NoModuleException.java
+│   │       │   └── NoiseException.java
+│   │       ├── Utils.java
+│   │       ├── NoiseQuality.java
+│   │       ├── Noise.java
+│   │       └── MathHelper.java
+│   └── minecraftforge/
+│       └── gradle/
+│           ├── tweakers/
+│           │   ├── CoremodTweaker.java
+│           │   └── AccessTransformerTweaker.java
+│           ├── OldPropertyMapSerializer.java
+│           └── GradleStartCommon.java
+├── com/
+│   ├── thoughtworks/
+│   │   └── paranamer/
+│   │       ├── PositionalParanamer.java
+│   │       ├── Paranamer.java
+│   │       ├── ParameterNamesNotFoundException.java
+│   │       ├── NullParanamer.java
+│   │       ├── JavadocParanamer.java
+│   │       ├── DefaultParanamer.java
+│   │       ├── CachingParanamer.java
+│   │       ├── BytecodeReadingParanamer.java
+│   │       ├── AnnotationParanamer.java
+│   │       └── AdaptiveParanamer.java
+│   └── sk89q/
+│       ├── worldedit/
+│       │   ├── world/
+│       │   │   ├── storage/
+│       │   │   │   ├── ZippedMcRegionChunkStore.java
+│       │   │   │   ├── ZippedLegacyChunkStore.java
+│       │   │   │   ├── TrueZipMcRegionChunkStore.java
+│       │   │   │   ├── TrueZipLegacyChunkStore.java
+│       │   │   │   ├── NBTConversions.java
+│       │   │   │   ├── MissingWorldException.java
+│       │   │   │   ├── MissingChunkException.java
+│       │   │   │   ├── McRegionReader.java
+│       │   │   │   ├── McRegionChunkStore.java
+│       │   │   │   ├── LegacyChunkStore.java
+│       │   │   │   ├── InvalidFormatException.java
+│       │   │   │   ├── FileMcRegionChunkStore.java
+│       │   │   │   ├── FileLegacyChunkStore.java
+│       │   │   │   ├── ChunkStoreException.java
+│       │   │   │   ├── ChunkStore.java
+│       │   │   │   └── BlockData.java
+│       │   │   ├── snapshot/
+│       │   │   │   ├── YYMMDDHHIISSParser.java
+│       │   │   │   ├── SnapshotRestore.java
+│       │   │   │   ├── SnapshotRepository.java
+│       │   │   │   ├── SnapshotDateParser.java
+│       │   │   │   ├── Snapshot.java
+│       │   │   │   ├── ModificationTimerParser.java
+│       │   │   │   └── InvalidSnapshotException.java
+│       │   │   ├── registry/
+│       │   │   │   ├── WorldData.java
+│       │   │   │   ├── StateValue.java
+│       │   │   │   ├── State.java
+│       │   │   │   ├── SimpleStateValue.java
+│       │   │   │   ├── SimpleState.java
+│       │   │   │   ├── SimpleBlockMaterial.java
+│       │   │   │   ├── NullItemRegistry.java
+│       │   │   │   ├── NullEntityRegistry.java
+│       │   │   │   ├── NullBiomeRegistry.java
+│       │   │   │   ├── LegacyWorldData.java
+│       │   │   │   ├── LegacyBlockRegistry.java
+│       │   │   │   ├── ItemRegistry.java
+│       │   │   │   ├── EntityRegistry.java
+│       │   │   │   ├── BundledBlockData.java
+│       │   │   │   ├── BlockRegistry.java
+│       │   │   │   └── BiomeRegistry.java
+│       │   │   ├── chunk/
+│       │   │   │   ├── OldChunk.java
+│       │   │   │   ├── Chunk.java
+│       │   │   │   └── AnvilChunk.java
+│       │   │   ├── biome/
+│       │   │   │   ├── Biomes.java
+│       │   │   │   ├── BiomeName.java
+│       │   │   │   ├── BiomeData.java
+│       │   │   │   └── BaseBiome.java
+│       │   │   ├── World.java
+│       │   │   ├── NullWorld.java
+│       │   │   ├── NbtValued.java
+│       │   │   ├── DataException.java
+│       │   │   └── AbstractWorld.java
+│       │   ├── util/
+│       │   │   ├── logging/
+│       │   │   │   ├── WorldEditPrefixHandler.java
+│       │   │   │   ├── LogFormat.java
+│       │   │   │   └── DynamicStreamHandler.java
+│       │   │   ├── io/
+│       │   │   │   ├── file/
+│       │   │   │   │   ├── InvalidFilenameException.java
+│       │   │   │   │   ├── FileSelectionAbortedException.java
+│       │   │   │   │   ├── FilenameResolutionException.java
+│       │   │   │   │   └── FilenameException.java
+│       │   │   │   ├── ForwardSeekableInputStream.java
+│       │   │   │   └── Closer.java
+│       │   │   ├── gson/
+│       │   │   │   ├── VectorAdapter.java
+│       │   │   │   └── GsonUtil.java
+│       │   │   ├── function/
+│       │   │   │   └── LevenshteinDistance.java
+│       │   │   ├── formatting/
+│       │   │   │   ├── component/
+│       │   │   │   │   ├── Subtle.java
+│       │   │   │   │   ├── MessageBox.java
+│       │   │   │   │   ├── Label.java
+│       │   │   │   │   ├── CommandUsageBox.java
+│       │   │   │   │   ├── CommandListBox.java
+│       │   │   │   │   └── Code.java
+│       │   │   │   ├── StyleSet.java
+│       │   │   │   ├── StyledFragment.java
+│       │   │   │   ├── Style.java
+│       │   │   │   ├── Fragment.java
+│       │   │   │   └── ColorCodeBuilder.java
+│       │   │   ├── eventbus/
+│       │   │   │   ├── SubscriberFindingStrategy.java
+│       │   │   │   ├── Subscribe.java
+│       │   │   │   ├── MethodEventHandler.java
+│       │   │   │   ├── HierarchyCache.java
+│       │   │   │   ├── EventHandler.java
+│       │   │   │   ├── EventBus.java
+│       │   │   │   └── AnnotatedSubscriberFinder.java
+│       │   │   ├── concurrency/
+│       │   │   │   └── EvenMoreExecutors.java
+│       │   │   ├── command/
+│       │   │   │   ├── parametric/
+│       │   │   │   │   ├── StringArgumentStack.java
+│       │   │   │   │   ├── ParametricException.java
+│       │   │   │   │   ├── ParametricCallable.java
+│       │   │   │   │   ├── ParametricBuilder.java
+│       │   │   │   │   ├── ParameterException.java
+│       │   │   │   │   ├── ParameterData.java
+│       │   │   │   │   ├── Optional.java
+│       │   │   │   │   ├── LegacyCommandsHandler.java
+│       │   │   │   │   ├── InvokeListener.java
+│       │   │   │   │   ├── InvokeHandler.java
+│       │   │   │   │   ├── ExceptionMatch.java
+│       │   │   │   │   ├── ExceptionConverterHelper.java
+│       │   │   │   │   ├── ExceptionConverter.java
+│       │   │   │   │   ├── ContextArgumentStack.java
+│       │   │   │   │   ├── BindingMatch.java
+│       │   │   │   │   ├── BindingHelper.java
+│       │   │   │   │   ├── BindingBehavior.java
+│       │   │   │   │   ├── Binding.java
+│       │   │   │   │   ├── ArgumentStack.java
+│       │   │   │   │   └── AbstractInvokeListener.java
+│       │   │   │   ├── fluent/
+│       │   │   │   │   ├── DispatcherNode.java
+│       │   │   │   │   └── CommandGraph.java
+│       │   │   │   ├── composition/
+│       │   │   │   │   ├── SimpleCommand.java
+│       │   │   │   │   ├── ProvidedValue.java
+│       │   │   │   │   ├── ParameterCommand.java
+│       │   │   │   │   ├── LegacyCommandAdapter.java
+│       │   │   │   │   ├── FlagParser.java
+│       │   │   │   │   ├── CommandExecutor.java
+│       │   │   │   │   └── BranchingCommand.java
+│       │   │   │   ├── binding/
+│       │   │   │   │   ├── Validate.java
+│       │   │   │   │   ├── Text.java
+│       │   │   │   │   ├── Switch.java
+│       │   │   │   │   ├── StandardBindings.java
+│       │   │   │   │   ├── Range.java
+│       │   │   │   │   └── PrimitiveBindings.java
+│       │   │   │   ├── argument/
+│       │   │   │   │   ├── UnusedArgumentsException.java
+│       │   │   │   │   ├── MissingArgumentException.java
+│       │   │   │   │   ├── CommandArgs.java
+│       │   │   │   │   ├── ArgumentUtils.java
+│       │   │   │   │   ├── ArgumentParseException.java
+│       │   │   │   │   └── ArgumentException.java
+│       │   │   │   ├── UnconsumedParameterException.java
+│       │   │   │   ├── SimpleParameter.java
+│       │   │   │   ├── SimpleDispatcher.java
+│       │   │   │   ├── SimpleDescription.java
+│       │   │   │   ├── SimpleCommandMapping.java
+│       │   │   │   ├── PrimaryAliasComparator.java
+│       │   │   │   ├── Parameter.java
+│       │   │   │   ├── NullCompleter.java
+│       │   │   │   ├── MissingParameterException.java
+│       │   │   │   ├── InvalidUsageException.java
+│       │   │   │   ├── Dispatcher.java
+│       │   │   │   ├── Description.java
+│       │   │   │   ├── CommandMapping.java
+│       │   │   │   ├── CommandCompleter.java
+│       │   │   │   └── CommandCallable.java
+│       │   │   ├── collection/
+│       │   │   │   ├── TupleArrayList.java
+│       │   │   │   ├── FastListIterator.java
+│       │   │   │   └── DoubleArrayList.java
+│       │   │   ├── auth/
+│       │   │   │   ├── Subject.java
+│       │   │   │   ├── NullAuthorizer.java
+│       │   │   │   ├── Authorizer.java
+│       │   │   │   └── AuthorizationException.java
+│       │   │   ├── YAMLConfiguration.java
+│       │   │   ├── WeightedChoice.java
+│       │   │   ├── TreeGenerator.java
+│       │   │   ├── TargetBlock.java
+│       │   │   ├── PropertiesConfiguration.java
+│       │   │   ├── Location.java
+│       │   │   ├── Java8Detector.java
+│       │   │   ├── Identifiable.java
+│       │   │   ├── FileDialogUtil.java
+│       │   │   ├── Faceted.java
+│       │   │   ├── Enums.java
+│       │   │   ├── Direction.java
+│       │   │   └── Countable.java
+│       │   ├── session/
+│       │   │   ├── storage/
+│       │   │   │   ├── VoidStore.java
+│       │   │   │   ├── SessionStore.java
+│       │   │   │   └── JsonFileSessionStore.java
+│       │   │   ├── request/
+│       │   │   │   ├── RequestSelection.java
+│       │   │   │   └── Request.java
+│       │   │   ├── TransientSessionException.java
+│       │   │   ├── SessionOwner.java
+│       │   │   ├── SessionManager.java
+│       │   │   ├── SessionKey.java
+│       │   │   ├── PasteBuilder.java
+│       │   │   ├── MissingSessionException.java
+│       │   │   └── ClipboardHolder.java
+│       │   ├── scripting/
+│       │   │   ├── java/
+│       │   │   │   ├── RhinoScriptEngineFactory.java
+│       │   │   │   └── RhinoScriptEngine.java
+│       │   │   ├── RhinoCraftScriptEngine.java
+│       │   │   ├── RhinoContextFactory.java
+│       │   │   ├── CraftScriptEnvironment.java
+│       │   │   ├── CraftScriptEngine.java
+│       │   │   └── CraftScriptContext.java
+│       │   ├── schematic/
+│       │   │   ├── SchematicFormat.java
+│       │   │   └── MCEditSchematicFormat.java
+│       │   ├── regions/
+│       │   │   ├── shape/
+│       │   │   │   ├── WorldEditExpressionEnvironment.java
+│       │   │   │   ├── RegionShape.java
+│       │   │   │   ├── ArbitraryShape.java
+│       │   │   │   └── ArbitraryBiomeShape.java
+│       │   │   ├── selector/
+│       │   │   │   ├── limit/
+│       │   │   │   │   ├── SelectorLimits.java
+│       │   │   │   │   └── PermissiveSelectorLimits.java
+│       │   │   │   ├── SphereRegionSelector.java
+│       │   │   │   ├── RegionSelectorType.java
+│       │   │   │   ├── Polygonal2DRegionSelector.java
+│       │   │   │   ├── ExtendingCuboidRegionSelector.java
+│       │   │   │   ├── EllipsoidRegionSelector.java
+│       │   │   │   ├── CylinderRegionSelector.java
+│       │   │   │   ├── CuboidRegionSelector.java
+│       │   │   │   └── ConvexPolyhedralRegionSelector.java
+│       │   │   ├── polyhedron/
+│       │   │   │   ├── Triangle.java
+│       │   │   │   └── Edge.java
+│       │   │   ├── iterator/
+│       │   │   │   ├── RegionIterator.java
+│       │   │   │   ├── FlatRegionIterator.java
+│       │   │   │   └── FlatRegion3DIterator.java
+│       │   │   ├── factory/
+│       │   │   │   ├── SphereRegionFactory.java
+│       │   │   │   ├── RegionFactory.java
+│       │   │   │   ├── CylinderRegionFactory.java
+│       │   │   │   └── CuboidRegionFactory.java
+│       │   │   ├── TransformRegion.java
+│       │   │   ├── SphereRegionSelector.java
+│       │   │   ├── RegionSelector.java
+│       │   │   ├── Regions.java
+│       │   │   ├── RegionOperationException.java
+│       │   │   ├── RegionIntersection.java
+│       │   │   ├── Region.java
+│       │   │   ├── Polygonal2DRegionSelector.java
+│       │   │   ├── Polygonal2DRegion.java
+│       │   │   ├── NullRegion.java
+│       │   │   ├── FlatRegion.java
+│       │   │   ├── ExtendingCuboidRegionSelector.java
+│       │   │   ├── EllipsoidRegionSelector.java
+│       │   │   ├── EllipsoidRegion.java
+│       │   │   ├── CylinderRegionSelector.java
+│       │   │   ├── CylinderRegion.java
+│       │   │   ├── CuboidRegionSelector.java
+│       │   │   ├── CuboidRegion.java
+│       │   │   ├── ConvexPolyhedralRegionSelector.java
+│       │   │   ├── ConvexPolyhedralRegion.java
+│       │   │   ├── AbstractRegion.java
+│       │   │   └── AbstractLegacyRegionSelector.java
+│       │   ├── patterns/
+│       │   │   ├── SingleBlockPattern.java
+│       │   │   ├── RandomFillPattern.java
+│       │   │   ├── Pattern.java
+│       │   │   ├── ClipboardPattern.java
+│       │   │   └── BlockChance.java
+│       │   ├── math/
+│       │   │   ├── transform/
+│       │   │   │   ├── Transforms.java
+│       │   │   │   ├── Transform.java
+│       │   │   │   ├── Identity.java
+│       │   │   │   ├── CombinedTransform.java
+│       │   │   │   └── AffineTransform.java
+│       │   │   ├── noise/
+│       │   │   │   ├── VoronoiNoise.java
+│       │   │   │   ├── RidgedMultiFractalNoise.java
+│       │   │   │   ├── RandomNoise.java
+│       │   │   │   ├── PerlinNoise.java
+│       │   │   │   ├── NoiseGenerator.java
+│       │   │   │   └── JLibNoiseGenerator.java
+│       │   │   ├── interpolation/
+│       │   │   │   ├── ReparametrisingInterpolation.java
+│       │   │   │   ├── Node.java
+│       │   │   │   ├── LinearInterpolation.java
+│       │   │   │   ├── KochanekBartelsInterpolation.java
+│       │   │   │   └── Interpolation.java
+│       │   │   ├── geom/
+│       │   │   │   └── Polygons.java
+│       │   │   ├── convolution/
+│       │   │   │   ├── LinearKernel.java
+│       │   │   │   ├── HeightMapFilter.java
+│       │   │   │   ├── HeightMap.java
+│       │   │   │   └── GaussianKernel.java
+│       │   │   └── MathUtils.java
+│       │   ├── masks/
+│       │   │   ├── UnderOverlayMask.java
+│       │   │   ├── SolidBlockMask.java
+│       │   │   ├── RegionMask.java
+│       │   │   ├── RandomMask.java
+│       │   │   ├── Mask.java
+│       │   │   ├── InvertedMask.java
+│       │   │   ├── InvertedBlockTypeMask.java
+│       │   │   ├── FuzzyBlockMask.java
+│       │   │   ├── ExistingBlockMask.java
+│       │   │   ├── DynamicRegionMask.java
+│       │   │   ├── CombinedMask.java
+│       │   │   ├── BlockTypeMask.java
+│       │   │   ├── BlockMask.java
+│       │   │   └── AbstractMask.java
+│       │   ├── internal/
+│       │   │   ├── util/
+│       │   │   │   ├── DocumentationPrinter.java
+│       │   │   │   └── AbstractAdapter.java
+│       │   │   ├── registry/
+│       │   │   │   ├── InputParser.java
+│       │   │   │   └── AbstractFactory.java
+│       │   │   ├── helper/
+│       │   │   │   └── MCDirections.java
+│       │   │   ├── expression/
+│       │   │   │   ├── runtime/
+│       │   │   │   │   ├── While.java
+│       │   │   │   │   ├── Variable.java
+│       │   │   │   │   ├── Switch.java
+│       │   │   │   │   ├── SimpleFor.java
+│       │   │   │   │   ├── Sequence.java
+│       │   │   │   │   ├── RValue.java
+│       │   │   │   │   ├── ReturnException.java
+│       │   │   │   │   ├── Return.java
+│       │   │   │   │   ├── Operators.java
+│       │   │   │   │   ├── Node.java
+│       │   │   │   │   ├── LValueFunction.java
+│       │   │   │   │   ├── LValue.java
+│       │   │   │   │   ├── Functions.java
+│       │   │   │   │   ├── Function.java
+│       │   │   │   │   ├── For.java
+│       │   │   │   │   ├── ExpressionEnvironment.java
+│       │   │   │   │   ├── EvaluationException.java
+│       │   │   │   │   ├── Constant.java
+│       │   │   │   │   ├── Conditional.java
+│       │   │   │   │   ├── BreakException.java
+│       │   │   │   │   └── Break.java
+│       │   │   │   ├── parser/
+│       │   │   │   │   ├── UnboundVariable.java
+│       │   │   │   │   ├── UnaryOperator.java
+│       │   │   │   │   ├── PseudoToken.java
+│       │   │   │   │   ├── ParserProcessors.java
+│       │   │   │   │   ├── ParserException.java
+│       │   │   │   │   └── Parser.java
+│       │   │   │   ├── lexer/
+│       │   │   │   │   ├── tokens/
+│       │   │   │   │   │   ├── Token.java
+│       │   │   │   │   │   ├── OperatorToken.java
+│       │   │   │   │   │   ├── NumberToken.java
+│       │   │   │   │   │   ├── KeywordToken.java
+│       │   │   │   │   │   ├── IdentifierToken.java
+│       │   │   │   │   │   └── CharacterToken.java
+│       │   │   │   │   ├── LexerException.java
+│       │   │   │   │   └── Lexer.java
+│       │   │   │   ├── Identifiable.java
+│       │   │   │   ├── ExpressionException.java
+│       │   │   │   └── Expression.java
+│       │   │   ├── cui/
+│       │   │   │   ├── SelectionShapeEvent.java
+│       │   │   │   ├── SelectionPolygonEvent.java
+│       │   │   │   ├── SelectionPointEvent.java
+│       │   │   │   ├── SelectionPoint2DEvent.java
+│       │   │   │   ├── SelectionMinMaxEvent.java
+│       │   │   │   ├── SelectionEllipsoidPointEvent.java
+│       │   │   │   ├── SelectionCylinderEvent.java
+│       │   │   │   ├── CUIRegion.java
+│       │   │   │   └── CUIEvent.java
+│       │   │   ├── command/
+│       │   │   │   ├── WorldEditExceptionConverter.java
+│       │   │   │   ├── WorldEditBinding.java
+│       │   │   │   ├── UserCommandCompleter.java
+│       │   │   │   ├── CommandLoggingHandler.java
+│       │   │   │   └── ActorAuthorizer.java
+│       │   │   ├── annotation/
+│       │   │   │   ├── Selection.java
+│       │   │   │   ├── RequiresNewerGuava.java
+│       │   │   │   └── Direction.java
+│       │   │   ├── ServerInterfaceAdapter.java
+│       │   │   ├── LocalWorldAdapter.java
+│       │   │   └── Constants.java
+│       │   ├── history/
+│       │   │   ├── changeset/
+│       │   │   │   ├── ChangeSet.java
+│       │   │   │   ├── BlockOptimizedHistory.java
+│       │   │   │   └── ArrayListHistory.java
+│       │   │   ├── change/
+│       │   │   │   ├── EntityRemove.java
+│       │   │   │   ├── EntityCreate.java
+│       │   │   │   ├── Change.java
+│       │   │   │   └── BlockChange.java
+│       │   │   └── UndoContext.java
+│       │   ├── function/
+│       │   │   ├── visitor/
+│       │   │   │   ├── RegionVisitor.java
+│       │   │   │   ├── RecursiveVisitor.java
+│       │   │   │   ├── NonRisingVisitor.java
+│       │   │   │   ├── LayerVisitor.java
+│       │   │   │   ├── FlatRegionVisitor.java
+│       │   │   │   ├── EntityVisitor.java
+│       │   │   │   ├── DownwardVisitor.java
+│       │   │   │   └── BreadthFirstSearch.java
+│       │   │   ├── util/
+│       │   │   │   ├── RegionOffset.java
+│       │   │   │   └── FlatRegionOffset.java
+│       │   │   ├── pattern/
+│       │   │   │   ├── RepeatingExtentPattern.java
+│       │   │   │   ├── RandomPattern.java
+│       │   │   │   ├── Patterns.java
+│       │   │   │   ├── Pattern.java
+│       │   │   │   ├── ClipboardPattern.java
+│       │   │   │   ├── BlockPattern.java
+│       │   │   │   └── AbstractPattern.java
+│       │   │   ├── operation/
+│       │   │   │   ├── RunContext.java
+│       │   │   │   ├── Operations.java
+│       │   │   │   ├── OperationQueue.java
+│       │   │   │   ├── Operation.java
+│       │   │   │   ├── ForwardExtentCopy.java
+│       │   │   │   ├── DelegateOperation.java
+│       │   │   │   ├── ChangeSetExecutor.java
+│       │   │   │   └── BlockMapEntryPlacer.java
+│       │   │   ├── mask/
+│       │   │   │   ├── SolidBlockMask.java
+│       │   │   │   ├── RegionMask.java
+│       │   │   │   ├── OffsetMask2D.java
+│       │   │   │   ├── OffsetMask.java
+│       │   │   │   ├── NoiseFilter2D.java
+│       │   │   │   ├── NoiseFilter.java
+│       │   │   │   ├── MaskUnion2D.java
+│       │   │   │   ├── MaskUnion.java
+│       │   │   │   ├── Masks.java
+│       │   │   │   ├── MaskIntersection2D.java
+│       │   │   │   ├── MaskIntersection.java
+│       │   │   │   ├── Mask2D.java
+│       │   │   │   ├── Mask.java
+│       │   │   │   ├── FuzzyBlockMask.java
+│       │   │   │   ├── ExpressionMask2D.java
+│       │   │   │   ├── ExpressionMask.java
+│       │   │   │   ├── ExistingBlockMask.java
+│       │   │   │   ├── BoundedHeightMask.java
+│       │   │   │   ├── BlockMask.java
+│       │   │   │   ├── BiomeMask2D.java
+│       │   │   │   ├── AbstractMask2D.java
+│       │   │   │   ├── AbstractMask.java
+│       │   │   │   └── AbstractExtentMask.java
+│       │   │   ├── generator/
+│       │   │   │   ├── GardenPatchGenerator.java
+│       │   │   │   ├── ForestGenerator.java
+│       │   │   │   └── FloraGenerator.java
+│       │   │   ├── factory/
+│       │   │   │   ├── Paint.java
+│       │   │   │   ├── Deform.java
+│       │   │   │   └── Apply.java
+│       │   │   ├── entity/
+│       │   │   │   └── ExtentEntityCopy.java
+│       │   │   ├── block/
+│       │   │   │   ├── Naturalizer.java
+│       │   │   │   ├── ExtentBlockCopy.java
+│       │   │   │   ├── Counter.java
+│       │   │   │   └── BlockReplace.java
+│       │   │   ├── biome/
+│       │   │   │   └── BiomeReplace.java
+│       │   │   ├── RegionMaskingFilter.java
+│       │   │   ├── RegionFunction.java
+│       │   │   ├── LayerFunction.java
+│       │   │   ├── GroundFunction.java
+│       │   │   ├── FlatRegionMaskingFilter.java
+│       │   │   ├── FlatRegionFunction.java
+│       │   │   ├── EntityFunction.java
+│       │   │   ├── EditContext.java
+│       │   │   ├── Contextual.java
+│       │   │   └── CombinedRegionFunction.java
+│       │   ├── foundation/
+│       │   │   └── Block.java
+│       │   ├── forge/
+│       │   │   ├── gui/
+│       │   │   │   ├── GuiReferenceCard.java
+│       │   │   │   └── GuiHandler.java
+│       │   │   ├── compat/
+│       │   │   │   ├── NoForgeMultipartCompat.java
+│       │   │   │   ├── ForgeMultipartExistsCompat.java
+│       │   │   │   └── ForgeMultipartCompat.java
+│       │   │   ├── WorldEditFakePlayer.java
+│       │   │   ├── WECUIPacketHandler.java
+│       │   │   ├── TileEntityUtils.java
+│       │   │   ├── TileEntityBaseBlock.java
+│       │   │   ├── ThreadSafeCache.java
+│       │   │   ├── NBTConverter.java
+│       │   │   ├── KeyHandler.java
+│       │   │   ├── ForgeWorldEdit.java
+│       │   │   ├── ForgeWorldData.java
+│       │   │   ├── ForgeWorld.java
+│       │   │   ├── ForgePlayer.java
+│       │   │   ├── ForgePlatform.java
+│       │   │   ├── ForgePermissionsProvider.java
+│       │   │   ├── ForgeItemRegistry.java
+│       │   │   ├── ForgeEntityType.java
+│       │   │   ├── ForgeEntity.java
+│       │   │   ├── ForgeConfiguration.java
+│       │   │   ├── ForgeBiomeRegistry.java
+│       │   │   ├── ForgeAdapter.java
+│       │   │   ├── CommonProxy.java
+│       │   │   ├── CommandWrapper.java
+│       │   │   └── ClientProxy.java
+│       │   ├── extent/
+│       │   │   ├── world/
+│       │   │   │   ├── SurvivalModeExtent.java
+│       │   │   │   ├── FastModeExtent.java
+│       │   │   │   ├── ChunkLoadingExtent.java
+│       │   │   │   └── BlockQuirkExtent.java
+│       │   │   ├── validation/
+│       │   │   │   ├── DataValidatorExtent.java
+│       │   │   │   └── BlockChangeLimiter.java
+│       │   │   ├── transform/
+│       │   │   │   └── BlockTransformExtent.java
+│       │   │   ├── reorder/
+│       │   │   │   ├── ReorderingExtent.java
+│       │   │   │   └── MultiStageReorder.java
+│       │   │   ├── logging/
+│       │   │   │   └── AbstractLoggingExtent.java
+│       │   │   ├── inventory/
+│       │   │   │   ├── UnplaceableBlockException.java
+│       │   │   │   ├── OutOfSpaceException.java
+│       │   │   │   ├── OutOfBlocksException.java
+│       │   │   │   ├── BlockBagExtent.java
+│       │   │   │   ├── BlockBagException.java
+│       │   │   │   └── BlockBag.java
+│       │   │   ├── clipboard/
+│       │   │   │   ├── io/
+│       │   │   │   │   ├── SchematicWriter.java
+│       │   │   │   │   ├── SchematicReader.java
+│       │   │   │   │   ├── ClipboardWriter.java
+│       │   │   │   │   ├── ClipboardReader.java
+│       │   │   │   │   └── ClipboardFormat.java
+│       │   │   │   ├── StoredEntity.java
+│       │   │   │   ├── Clipboard.java
+│       │   │   │   └── BlockArrayClipboard.java
+│       │   │   ├── cache/
+│       │   │   │   └── LastAccessExtentCache.java
+│       │   │   ├── buffer/
+│       │   │   │   └── ForgetfulExtentBuffer.java
+│       │   │   ├── OutputExtent.java
+│       │   │   ├── NullExtent.java
+│       │   │   ├── MaskingExtent.java
+│       │   │   ├── InputExtent.java
+│       │   │   ├── Extent.java
+│       │   │   ├── ChangeSetExtent.java
+│       │   │   └── AbstractDelegateExtent.java
+│       │   ├── extension/
+│       │   │   ├── platform/
+│       │   │   │   ├── permission/
+│       │   │   │   │   ├── OverridePermissions.java
+│       │   │   │   │   └── ActorSelectorLimits.java
+│       │   │   │   ├── Preference.java
+│       │   │   │   ├── PlayerProxy.java
+│       │   │   │   ├── PlatformManager.java
+│       │   │   │   ├── Platform.java
+│       │   │   │   ├── NoCapablePlatformException.java
+│       │   │   │   ├── MultiUserPlatform.java
+│       │   │   │   ├── CommandManager.java
+│       │   │   │   ├── Capability.java
+│       │   │   │   ├── Actor.java
+│       │   │   │   ├── AbstractPlayerActor.java
+│       │   │   │   └── AbstractPlatform.java
+│       │   │   ├── input/
+│       │   │   │   ├── ParserContext.java
+│       │   │   │   ├── NoMatchException.java
+│       │   │   │   ├── InputParseException.java
+│       │   │   │   └── DisallowedUsageException.java
+│       │   │   └── factory/
+│       │   │       ├── SingleBlockPatternParser.java
+│       │   │       ├── RandomPatternParser.java
+│       │   │       ├── PatternFactory.java
+│       │   │       ├── MaskFactory.java
+│       │   │       ├── ItemFactory.java
+│       │   │       ├── HashTagPatternParser.java
+│       │   │       ├── DefaultMaskParser.java
+│       │   │       ├── DefaultItemParser.java
+│       │   │       ├── DefaultBlockParser.java
+│       │   │       └── BlockFactory.java
+│       │   ├── event/
+│       │   │   ├── platform/
+│       │   │   │   ├── PlayerInputEvent.java
+│       │   │   │   ├── PlatformReadyEvent.java
+│       │   │   │   ├── PlatformInitializeEvent.java
+│       │   │   │   ├── Interaction.java
+│       │   │   │   ├── InputType.java
+│       │   │   │   ├── ConfigurationLoadEvent.java
+│       │   │   │   ├── CommandSuggestionEvent.java
+│       │   │   │   ├── CommandEvent.java
+│       │   │   │   └── BlockInteractEvent.java
+│       │   │   ├── extent/
+│       │   │   │   └── EditSessionEvent.java
+│       │   │   ├── Event.java
+│       │   │   ├── Cancellable.java
+│       │   │   └── AbstractCancellable.java
+│       │   ├── entity/
+│       │   │   ├── metadata/
+│       │   │   │   └── EntityType.java
+│       │   │   ├── Player.java
+│       │   │   ├── Entity.java
+│       │   │   └── BaseEntity.java
+│       │   ├── data/
+│       │   │   └── DataException.java
+│       │   ├── command/
+│       │   │   ├── util/
+│       │   │   │   ├── EntityRemover.java
+│       │   │   │   └── CreatureButcher.java
+│       │   │   ├── tool/
+│       │   │   │   ├── brush/
+│       │   │   │   │   ├── SphereBrush.java
+│       │   │   │   │   ├── SmoothBrush.java
+│       │   │   │   │   ├── OperationFactoryBrush.java
+│       │   │   │   │   ├── HollowSphereBrush.java
+│       │   │   │   │   ├── HollowCylinderBrush.java
+│       │   │   │   │   ├── GravityBrush.java
+│       │   │   │   │   ├── CylinderBrush.java
+│       │   │   │   │   ├── ClipboardBrush.java
+│       │   │   │   │   ├── ButcherBrush.java
+│       │   │   │   │   └── Brush.java
+│       │   │   │   ├── TreePlanter.java
+│       │   │   │   ├── TraceTool.java
+│       │   │   │   ├── Tool.java
+│       │   │   │   ├── SinglePickaxe.java
+│       │   │   │   ├── RecursivePickaxe.java
+│       │   │   │   ├── QueryTool.java
+│       │   │   │   ├── LongRangeBuildTool.java
+│       │   │   │   ├── InvalidToolBindException.java
+│       │   │   │   ├── FloodFillTool.java
+│       │   │   │   ├── FloatingTreeRemover.java
+│       │   │   │   ├── DoubleActionTraceTool.java
+│       │   │   │   ├── DoubleActionBlockTool.java
+│       │   │   │   ├── DistanceWand.java
+│       │   │   │   ├── BrushTool.java
+│       │   │   │   ├── BlockTool.java
+│       │   │   │   ├── BlockReplacer.java
+│       │   │   │   ├── BlockDataCyler.java
+│       │   │   │   └── AreaPickaxe.java
+│       │   │   ├── composition/
+│       │   │   │   ├── ShapedBrushCommand.java
+│       │   │   │   ├── SelectionCommand.java
+│       │   │   │   ├── PaintCommand.java
+│       │   │   │   ├── DeformCommand.java
+│       │   │   │   └── ApplyCommand.java
+│       │   │   ├── argument/
+│       │   │   │   ├── TreeGeneratorParser.java
+│       │   │   │   ├── StringParser.java
+│       │   │   │   ├── ReplaceParser.java
+│       │   │   │   ├── RegionFunctionParser.java
+│       │   │   │   ├── RegionFactoryParser.java
+│       │   │   │   ├── PatternParser.java
+│       │   │   │   ├── NumberParser.java
+│       │   │   │   ├── ItemUseParser.java
+│       │   │   │   ├── ItemParser.java
+│       │   │   │   └── BooleanFlag.java
+│       │   │   ├── WorldEditCommands.java
+│       │   │   ├── UtilityCommands.java
+│       │   │   ├── ToolUtilCommands.java
+│       │   │   ├── ToolCommands.java
+│       │   │   ├── SuperPickaxeCommands.java
+│       │   │   ├── SnapshotUtilCommands.java
+│       │   │   ├── SnapshotCommands.java
+│       │   │   ├── SelectionCommands.java
+│       │   │   ├── ScriptingCommands.java
+│       │   │   ├── SchematicCommands.java
+│       │   │   ├── RegionCommands.java
+│       │   │   ├── NavigationCommands.java
+│       │   │   ├── InsufficientArgumentsException.java
+│       │   │   ├── HistoryCommands.java
+│       │   │   ├── GenerationCommands.java
+│       │   │   ├── GeneralCommands.java
+│       │   │   ├── FlattenedClipboardTransform.java
+│       │   │   ├── ClipboardCommands.java
+│       │   │   ├── ChunkCommands.java
+│       │   │   ├── BrushCommands.java
+│       │   │   └── BiomeCommands.java
+│       │   ├── blocks/
+│       │   │   ├── metadata/
+│       │   │   │   └── MobType.java
+│       │   │   ├── TileEntityBlock.java
+│       │   │   ├── SkullBlock.java
+│       │   │   ├── SignBlock.java
+│       │   │   ├── NoteBlock.java
+│       │   │   ├── MobSpawnerBlock.java
+│       │   │   ├── LazyBlock.java
+│       │   │   ├── ItemType.java
+│       │   │   ├── ItemID.java
+│       │   │   ├── FurnaceBlock.java
+│       │   │   ├── DispenserBlock.java
+│       │   │   ├── ContainerBlock.java
+│       │   │   ├── ClothColor.java
+│       │   │   ├── ChestBlock.java
+│       │   │   ├── BlockType.java
+│       │   │   ├── Blocks.java
+│       │   │   ├── BlockMaterial.java
+│       │   │   ├── BlockID.java
+│       │   │   ├── BlockData.java
+│       │   │   ├── BaseItemStack.java
+│       │   │   ├── BaseItem.java
+│       │   │   └── BaseBlock.java
+│       │   ├── bags/
+│       │   │   ├── UnplaceableBlockException.java
+│       │   │   ├── OutOfSpaceException.java
+│       │   │   ├── OutOfBlocksException.java
+│       │   │   ├── BlockBagException.java
+│       │   │   └── BlockBag.java
+│       │   ├── WorldVectorFace.java
+│       │   ├── WorldVector2D.java
+│       │   ├── WorldVector.java
+│       │   ├── WorldEditOperation.java
+│       │   ├── WorldEditException.java
+│       │   ├── WorldEdit.java
+│       │   ├── VectorFace.java
+│       │   ├── Vector2D.java
+│       │   ├── Vector.java
+│       │   ├── UnknownItemException.java
+│       │   ├── UnknownDirectionException.java
+│       │   ├── ServerInterface.java
+│       │   ├── PlayerDirection.java
+│       │   ├── NotABlockException.java
+│       │   ├── MaxRadiusException.java
+│       │   ├── MaxChangedBlocksException.java
+│       │   ├── MaxBrushRadiusException.java
+│       │   ├── Location.java
+│       │   ├── LocalWorld.java
+│       │   ├── LocalSession.java
+│       │   ├── LocalPlayer.java
+│       │   ├── LocalEntity.java
+│       │   ├── LocalConfiguration.java
+│       │   ├── InvalidItemException.java
+│       │   ├── IncompleteRegionException.java
+│       │   ├── EmptyClipboardException.java
+│       │   ├── EditSessionFactory.java
+│       │   ├── EditSession.java
+│       │   ├── DisallowedItemException.java
+│       │   ├── CuboidClipboard.java
+│       │   ├── BlockWorldVector2D.java
+│       │   ├── BlockWorldVector.java
+│       │   ├── BlockVector2D.java
+│       │   └── BlockVector.java
+│       ├── util/
+│       │   ├── yaml/
+│       │   │   ├── YAMLProcessorException.java
+│       │   │   ├── YAMLProcessor.java
+│       │   │   ├── YAMLNode.java
+│       │   │   └── YAMLFormat.java
+│       │   ├── StringUtil.java
+│       │   ├── ReflectionUtil.java
+│       │   └── ArrayUtil.java
+│       ├── minecraft/
+│       │   └── util/
+│       │       └── commands/
+│       │           ├── WrappedCommandException.java
+│       │           ├── UnhandledCommandException.java
+│       │           ├── SuggestionContext.java
+│       │           ├── SimpleInjector.java
+│       │           ├── NestedCommand.java
+│       │           ├── MissingNestedCommandException.java
+│       │           ├── Logging.java
+│       │           ├── Injector.java
+│       │           ├── Console.java
+│       │           ├── CommandUsageException.java
+│       │           ├── CommandsManager.java
+│       │           ├── CommandPermissionsException.java
+│       │           ├── CommandPermissions.java
+│       │           ├── CommandLocals.java
+│       │           ├── CommandException.java
+│       │           ├── CommandContext.java
+│       │           ├── CommandAlias.java
+│       │           └── Command.java
+│       ├── jnbt/
+│       │   ├── Tag.java
+│       │   ├── StringTag.java
+│       │   ├── ShortTag.java
+│       │   ├── NBTUtils.java
+│       │   ├── NBTOutputStream.java
+│       │   ├── NBTInputStream.java
+│       │   ├── NBTConstants.java
+│       │   ├── NamedTag.java
+│       │   ├── LongTag.java
+│       │   ├── ListTagBuilder.java
+│       │   ├── ListTag.java
+│       │   ├── IntTag.java
+│       │   ├── IntArrayTag.java
+│       │   ├── FloatTag.java
+│       │   ├── EndTag.java
+│       │   ├── DoubleTag.java
+│       │   ├── CompoundTagBuilder.java
+│       │   ├── CompoundTag.java
+│       │   ├── ByteTag.java
+│       │   └── ByteArrayTag.java
+│       └── jchronic/
+│           ├── utils/
+│           │   ├── Token.java
+│           │   ├── Time.java
+│           │   ├── Tick.java
+│           │   ├── StringUtils.java
+│           │   ├── Span.java
+│           │   └── Range.java
+│           ├── tags/
+│           │   ├── TimeZone.java
+│           │   ├── Tag.java
+│           │   ├── StringTag.java
+│           │   ├── SeparatorSlashOrDash.java
+│           │   ├── SeparatorIn.java
+│           │   ├── SeparatorComma.java
+│           │   ├── SeparatorAt.java
+│           │   ├── Separator.java
+│           │   ├── ScalarYear.java
+│           │   ├── ScalarMonth.java
+│           │   ├── ScalarDay.java
+│           │   ├── Scalar.java
+│           │   ├── Pointer.java
+│           │   ├── OrdinalDay.java
+│           │   ├── Ordinal.java
+│           │   └── Grabber.java
+│           ├── repeaters/
+│           │   ├── RepeaterYear.java
+│           │   ├── RepeaterWeekend.java
+│           │   ├── RepeaterWeek.java
+│           │   ├── RepeaterUnit.java
+│           │   ├── RepeaterTime.java
+│           │   ├── RepeaterSecond.java
+│           │   ├── RepeaterSeasonName.java
+│           │   ├── RepeaterSeason.java
+│           │   ├── RepeaterMonthName.java
+│           │   ├── RepeaterMonth.java
+│           │   ├── RepeaterMinute.java
+│           │   ├── RepeaterHour.java
+│           │   ├── RepeaterFortnight.java
+│           │   ├── RepeaterDayPortion.java
+│           │   ├── RepeaterDayName.java
+│           │   ├── RepeaterDay.java
+│           │   ├── Repeater.java
+│           │   ├── IntegerRepeaterDayPortion.java
+│           │   └── EnumRepeaterDayPortion.java
+│           ├── numerizer/
+│           │   └── Numerizer.java
+│           ├── handlers/
+│           │   ├── TagPattern.java
+│           │   ├── SySmSdHandler.java
+│           │   ├── SRPHandler.java
+│           │   ├── SRPAHandler.java
+│           │   ├── SmSyHandler.java
+│           │   ├── SmSdSyHandler.java
+│           │   ├── SmSdHandler.java
+│           │   ├── SdSmSyHandler.java
+│           │   ├── SdRmnSyHandler.java
+│           │   ├── RmnSyHandler.java
+│           │   ├── RmnSdSyHandler.java
+│           │   ├── RmnSdHandler.java
+│           │   ├── RmnOdHandler.java
+│           │   ├── RHandler.java
+│           │   ├── RGRHandler.java
+│           │   ├── RdnRmnSdTTzSyHandler.java
+│           │   ├── PSRHandler.java
+│           │   ├── ORSRHandler.java
+│           │   ├── ORRHandler.java
+│           │   ├── ORGRHandler.java
+│           │   ├── MDHandler.java
+│           │   ├── IHandler.java
+│           │   ├── HandlerTypePattern.java
+│           │   ├── HandlerPattern.java
+│           │   ├── Handler.java
+│           │   └── DummyHandler.java
+│           ├── Options.java
+│           └── Chronic.java
+└── summary.txt
