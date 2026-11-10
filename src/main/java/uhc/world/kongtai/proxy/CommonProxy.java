@@ -1,4 +1,4 @@
-package uhc.world.kongtai.proxy; // ⭐ 包名必须是 .proxy
+package uhc.world.kongtai.proxy;
 
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,12 +15,19 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.ORE_GEN_BUS.register(new OreGenHandler());
+        
+        // 注册维度类型
         DimensionManager.registerProviderType(100, WorldProviderUHC.class, false);
-        DimensionManager.registerDimension(100, 100);
+        
+        // ⭐ 批量注册维度：100 到 112（共13个维度）
+        for (int i = 0; i <= 12; i++) {
+            DimensionManager.registerDimension(100 + i, 100);
+        }
     }
 
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new CommandUHCGen());
+        // 既然没有 Tick 事件了，这里就不需要注册 EVENT_BUS 了，直接空着或者留给以后用
+        // MinecraftForge.EVENT_BUS.register(new CommandUHCGen()); 
     }
 
     public void postInit(FMLPostInitializationEvent event) {}

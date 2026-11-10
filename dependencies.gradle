@@ -68,5 +68,9 @@ dependencies {
 
 
 
+ //devOnlyNonPublishable(rfg.deobf(project.files("libs/Chunk-Pregenerator-1.7.10-4.4.9.2.jar")))
+ //devOnlyNonPublishable(rfg.deobf(project.files("libs/CarbonConfig-1.7.10-2.0.2.1.jar")))
+ 
+ //devOnlyNonPublishable(rfg.deobf(project.files("libs/CarefulCastCorrector-2.0.jar")))
  devOnlyNonPublishable(rfg.deobf(project.files("libs/worldedit-1.7.10-6.1.1.jar")))
 }
