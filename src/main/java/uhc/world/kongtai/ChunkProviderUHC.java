@@ -1,5 +1,7 @@
 package uhc.world.kongtai;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -7,8 +9,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenIceSpike;
-
-import java.util.Random;
 
 public class ChunkProviderUHC extends ChunkProviderGenerate {
 
@@ -30,7 +30,8 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
         super.replaceBlocksForBiome(chunkX, chunkZ, blocks, metadata, biomes);
 
         double[] noiseLow = this.terrainNoise.func_151599_a(null, chunkX * 16, chunkZ * 16, 16, 16, 0.02, 0.02, 1.0);
-        double[] noiseHigh = this.terrainNoise.func_151599_a(null, chunkX * 16 + 512, chunkZ * 16 + 512, 16, 16, 0.06, 0.06, 1.0);
+        double[] noiseHigh = this.terrainNoise
+            .func_151599_a(null, chunkX * 16 + 512, chunkZ * 16 + 512, 16, 16, 0.06, 0.06, 1.0);
 
         final double DISC_RADIUS = 100.0;
         final double FLAT_RADIUS = 70.0;
@@ -79,7 +80,9 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
 
                 for (int y = targetY + 1; y <= 255; y++) {
                     Block b = blocks[indexBase | y];
-                    if (b == Blocks.water || b == Blocks.flowing_water || b == Blocks.lava || b == Blocks.flowing_lava) {
+                    if (b == Blocks.water || b == Blocks.flowing_water
+                        || b == Blocks.lava
+                        || b == Blocks.flowing_lava) {
                         blocks[indexBase | y] = null;
                     }
                 }
@@ -104,7 +107,7 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
 
                 blocks[indexBase | targetY] = topBlock;
                 metadata[indexBase | targetY] = topMeta;
-                
+
                 for (int y = targetY - 1; y >= targetY - 4 && y > 0; y--) {
                     if (this.centerBiome == BiomeGenBase.mesaPlateau_F) {
                         blocks[indexBase | y] = Blocks.sand;
@@ -126,8 +129,9 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
         // 🧊 逻辑1：110冰原专属，柏林噪声散落冰刺
         // ==========================================
         if (this.centerBiome == BiomeGenBase.icePlains) {
-            double[] spikeNoise = this.terrainNoise.func_151599_a(null, chunkX * 16, chunkZ * 16, 16, 16, 0.05, 0.05, 1.0);
-            
+            double[] spikeNoise = this.terrainNoise
+                .func_151599_a(null, chunkX * 16, chunkZ * 16, 16, 16, 0.05, 0.05, 1.0);
+
             for (int x = 0; x < 16; x++) {
                 for (int z = 0; z < 16; z++) {
                     int worldX = chunkX * 16 + x;
@@ -138,7 +142,7 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
                     if (distSq > 15 * 15 && distSq <= 100 * 100) {
                         if (spikeNoise[x + z * 16] > 0.4) {
                             if (this.iceRand.nextInt(100) < 10) { // 10% 真实生成概率
-                                int y = this.world.getHeightValue(worldX, worldZ); 
+                                int y = this.world.getHeightValue(worldX, worldZ);
                                 (new WorldGenIceSpike()).generate(this.world, this.iceRand, worldX, y, worldZ);
                             }
                         }
@@ -153,21 +157,21 @@ public class ChunkProviderUHC extends ChunkProviderGenerate {
         int centerX = chunkX * 16 + 8;
         int centerZ = chunkZ * 16 + 8;
         int distSq = centerX * centerX + centerZ * centerZ;
-        
+
         if (distSq > 100 * 100 && distSq <= 250 * 250) {
             // 查一下这个位置是不是真的被咱们改成了沼泽
             BiomeGenBase currentBiome = this.world.getBiomeGenForCoords(centerX, centerZ);
-            
+
             if (currentBiome == BiomeGenBase.swampland) {
                 // 原版甘蔗生成器
                 net.minecraft.world.gen.feature.WorldGenReed reedGen = new net.minecraft.world.gen.feature.WorldGenReed();
-                
+
                 // 循环尝试 20 次（原版是10次，多一倍，保证沼泽里到处是甘蔗）
                 for (int i = 0; i < 20; i++) {
                     int x = chunkX * 16 + this.iceRand.nextInt(16) + 8;
                     int z = chunkZ * 16 + this.iceRand.nextInt(16) + 8;
                     int y = this.world.getHeightValue(x, z);
-                    
+
                     // 甘蔗生成器会自动判断旁边有没有水，有才会长
                     reedGen.generate(this.world, this.iceRand, x, y, z);
                 }

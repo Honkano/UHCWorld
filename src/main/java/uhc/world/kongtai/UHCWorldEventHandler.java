@@ -1,8 +1,9 @@
 package uhc.world.kongtai;
 
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+
 import cpw.mods.fml.common.eventhandler.Event;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 
 public class UHCWorldEventHandler {
 
@@ -18,11 +19,11 @@ public class UHCWorldEventHandler {
         if (worldX * worldX + worldZ * worldZ > 100 * 100) return;
 
         // ⭐ 核心拦截：在内圈，干掉树、仙人掌、大蘑菇、湖泊（包含水湖和岩浆湖）
-        if (event.type == DecorateBiomeEvent.Decorate.EventType.TREE ||
-            event.type == DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM ||
-            event.type == DecorateBiomeEvent.Decorate.EventType.CACTUS ||
-            event.type == DecorateBiomeEvent.Decorate.EventType.LAKE) {
-            
+        if (event.type == DecorateBiomeEvent.Decorate.EventType.TREE
+            || event.type == DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM
+            || event.type == DecorateBiomeEvent.Decorate.EventType.CACTUS
+            || event.type == DecorateBiomeEvent.Decorate.EventType.LAKE) {
+
             event.setResult(Event.Result.DENY); // 直接拒绝生成！
         }
     }

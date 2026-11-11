@@ -9,7 +9,10 @@ public class WorldChunkManagerUHC extends WorldChunkManager {
     private final World world;
 
     public WorldChunkManagerUHC(World world) {
-        super(world.getSeed(), world.getWorldInfo().getTerrainType());
+        super(
+            world.getSeed(),
+            world.getWorldInfo()
+                .getTerrainType());
         this.world = world;
     }
 
@@ -76,23 +79,22 @@ public class WorldChunkManagerUHC extends WorldChunkManager {
         // 3. 中圈 (100~250)：雨露均沾的 8 等分大后宫
         if (distSq <= 250 * 250) {
             // 极坐标切分 8 个方位
-            double angle = Math.atan2(worldZ, worldX); 
+            double angle = Math.atan2(worldZ, worldX);
             int sector = (int) ((angle + Math.PI) / (Math.PI * 2) * 8) % 8;
-            
+
             // ⭐ 每次换个新世界，这8个方位的群系会像转盘一样轮换
-            int seedOffset = Math.abs((int)(this.world.getSeed() % 8));
+            int seedOffset = Math.abs((int) (this.world.getSeed() % 8));
             int finalSector = (sector + seedOffset) % 8;
 
             // ⭐ 终极雨露均沾池：保证有沼泽(甘蔗)、沙漠(神殿)、平原(草地)、森林(木头)
-            BiomeGenBase[] balancedPool = {
-                BiomeGenBase.swampland,    // 0: 沼泽（甘蔗妹妹站起来了！）
-                BiomeGenBase.desert,       // 1: 沙漠（仙人掌/神殿）
-                BiomeGenBase.plains,       // 2: 平原（草原妹妹回来了）
-                BiomeGenBase.forest,       // 3: 森林
-                BiomeGenBase.swampland,    // 4: 沼泽（咱们给它2个方位，面积够大了吧！）
-                BiomeGenBase.jungle,       // 5: 丛林
-                BiomeGenBase.megaTaiga,    // 6: 巨型针叶林（苔藓石）
-                BiomeGenBase.coldTaiga     // 7: 冷针叶林（雪地松树）
+            BiomeGenBase[] balancedPool = { BiomeGenBase.swampland, // 0: 沼泽（甘蔗妹妹站起来了！）
+                BiomeGenBase.desert, // 1: 沙漠（仙人掌/神殿）
+                BiomeGenBase.plains, // 2: 平原（草原妹妹回来了）
+                BiomeGenBase.forest, // 3: 森林
+                BiomeGenBase.swampland, // 4: 沼泽（咱们给它2个方位，面积够大了吧！）
+                BiomeGenBase.jungle, // 5: 丛林
+                BiomeGenBase.megaTaiga, // 6: 巨型针叶林（苔藓石）
+                BiomeGenBase.coldTaiga // 7: 冷针叶林（雪地松树）
             };
 
             return balancedPool[finalSector];
@@ -103,8 +105,9 @@ public class WorldChunkManagerUHC extends WorldChunkManager {
     }
 
     private boolean isOceanic(BiomeGenBase b) {
-        return b == BiomeGenBase.ocean || b == BiomeGenBase.deepOcean || 
-               b == BiomeGenBase.frozenOcean || b == BiomeGenBase.frozenRiver || 
-               b == BiomeGenBase.river;
+        return b == BiomeGenBase.ocean || b == BiomeGenBase.deepOcean
+            || b == BiomeGenBase.frozenOcean
+            || b == BiomeGenBase.frozenRiver
+            || b == BiomeGenBase.river;
     }
 }
