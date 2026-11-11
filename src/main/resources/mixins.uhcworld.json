@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "uhc.world.kongtai.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "plugin": "uhc.world.kongtai.mixin.UhcWorldMixinPlugin",
+  "mixins": [
+    "MixinChunkBiomeCrash"
+  ],
+  "client": [
+    "MixinMinecraftIntegratedServer"
+  ],
+  "server": []
+}

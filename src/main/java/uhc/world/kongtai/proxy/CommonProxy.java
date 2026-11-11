@@ -10,24 +10,24 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import uhc.world.kongtai.CommandUHCGen;
 import uhc.world.kongtai.OreGenHandler;
 import uhc.world.kongtai.WorldProviderUHC;
+import uhc.world.kongtai.UHCWorldEventHandler; // ⭐ 引入事件类
 
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.ORE_GEN_BUS.register(new OreGenHandler());
         
-        // 注册维度类型
         DimensionManager.registerProviderType(100, WorldProviderUHC.class, false);
         
-        // ⭐ 批量注册维度：100 到 112（共13个维度）
-        for (int i = 0; i <= 12; i++) {
+        // ⭐ 循环增加到 13（也就是 100 到 113，共 14 个维度）
+        for (int i = 0; i <= 13; i++) {
             DimensionManager.registerDimension(100 + i, 100);
         }
     }
 
     public void init(FMLInitializationEvent event) {
-        // 既然没有 Tick 事件了，这里就不需要注册 EVENT_BUS 了，直接空着或者留给以后用
-        // MinecraftForge.EVENT_BUS.register(new CommandUHCGen()); 
+        // ⭐ 重点来了：把这个被遗忘的“安检门”插上电！
+        MinecraftForge.EVENT_BUS.register(new UHCWorldEventHandler());
     }
 
     public void postInit(FMLPostInitializationEvent event) {}

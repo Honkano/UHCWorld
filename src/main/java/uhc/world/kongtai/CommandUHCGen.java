@@ -32,7 +32,7 @@ public class CommandUHCGen extends CommandBase {
             if (sender instanceof EntityPlayerMP) {
                 EntityPlayerMP player = (EntityPlayerMP) sender;
                 int targetDim = 100; // 默认传送到 100（平原）
-                
+
                 // 如果输入了维度参数，比如 /uhcgen tp 110
                 if (args.length > 1) {
                     try {
@@ -42,36 +42,47 @@ public class CommandUHCGen extends CommandBase {
                         return;
                     }
                 }
-                
+
                 if (player.dimension != targetDim) {
                     WorldServer uhcWorld = player.mcServer.worldServerForDimension(targetDim);
                     if (uhcWorld == null) {
                         sender.addChatMessage(new ChatComponentText("§c[UHC] 目标维度未加载或不存在！"));
                         return;
                     }
-                    
+
                     // 预加载出生点附近的 5x5 区块，防止传送过去掉入虚空
                     for (int x = -2; x <= 2; x++) {
                         for (int z = -2; z <= 2; z++) {
-                            uhcWorld.getChunkProvider().provideChunk(x, z);
+                            uhcWorld.getChunkProvider()
+                                .provideChunk(x, z);
                         }
                     }
-                    
+
                     int highestY = uhcWorld.getTopSolidOrLiquidBlock(0, 0);
                     final double safeY = highestY + 1.0;
                     final int finalTargetDim = targetDim;
 
                     player.mcServer.getConfigurationManager()
-                        .transferPlayerToDimension(player, finalTargetDim, new net.minecraft.world.Teleporter(uhcWorld) {
-                            @Override
-                            public void placeInPortal(net.minecraft.entity.Entity entity, double x, double y, double z, float yaw) {
-                                // 强制在 0,0 生成
-                                entity.setLocationAndAngles(0.5, safeY, 0.5, entity.rotationYaw, entity.rotationPitch);
-                                entity.motionX = 0;
-                                entity.motionY = 0;
-                                entity.motionZ = 0;
-                            }
-                        });
+                        .transferPlayerToDimension(
+                            player,
+                            finalTargetDim,
+                            new net.minecraft.world.Teleporter(uhcWorld) {
+
+                                @Override
+                                public void placeInPortal(net.minecraft.entity.Entity entity, double x, double y,
+                                    double z, float yaw) {
+                                    // 强制在 0,0 生成
+                                    entity.setLocationAndAngles(
+                                        0.5,
+                                        safeY,
+                                        0.5,
+                                        entity.rotationYaw,
+                                        entity.rotationPitch);
+                                    entity.motionX = 0;
+                                    entity.motionY = 0;
+                                    entity.motionZ = 0;
+                                }
+                            });
                     player.setPositionAndUpdate(0.5, safeY, 0.5);
                     sender.addChatMessage(new ChatComponentText("§a[UHC] 已安全传送到 UHC 造图维度 [" + finalTargetDim + "]"));
                 } else {
@@ -127,8 +138,17 @@ public class CommandUHCGen extends CommandBase {
 
                 String worldName = world.provider.getDimensionName();
                 sender.addChatMessage(new ChatComponentText("§e==== 区块矿物扫描 [" + worldName + "] ===="));
-                sender.addChatMessage(new ChatComponentText("§7煤: §f" + coal + " | §7铁: §f" + iron + " | §7红石: §f" + redstone));
-                sender.addChatMessage(new ChatComponentText("§7金: §f" + gold + " | §7青金石: §f" + lapis + " | §c钻石: §f" + diamond + " | §a绿宝石: §f" + emerald));
+                sender.addChatMessage(
+                    new ChatComponentText("§7煤: §f" + coal + " | §7铁: §f" + iron + " | §7红石: §f" + redstone));
+                sender.addChatMessage(
+                    new ChatComponentText(
+                        "§7金: §f" + gold
+                            + " | §7青金石: §f"
+                            + lapis
+                            + " | §c钻石: §f"
+                            + diamond
+                            + " | §a绿宝石: §f"
+                            + emerald));
             }
             return;
         }

@@ -68,9 +68,14 @@ dependencies {
 
 
 
- //devOnlyNonPublishable(rfg.deobf(project.files("libs/Chunk-Pregenerator-1.7.10-4.4.9.2.jar")))
- //devOnlyNonPublishable(rfg.deobf(project.files("libs/CarbonConfig-1.7.10-2.0.2.1.jar")))
+    devOnlyNonPublishable(rfg.deobf(project.files("libs/Chunk-Pregenerator-1.7.10-4.4.9.2.jar")))
+    devOnlyNonPublishable(rfg.deobf(project.files("libs/CarbonConfig-1.7.10-2.0.2.1.jar")))
  
- //devOnlyNonPublishable(rfg.deobf(project.files("libs/CarefulCastCorrector-2.0.jar")))
- devOnlyNonPublishable(rfg.deobf(project.files("libs/worldedit-1.7.10-6.1.1.jar")))
+    devOnlyNonPublishable(rfg.deobf(project.files("libs/worldedit-1.7.10-6.1.1.jar")))
+
+
+    devOnlyNonPublishable('com.github.GTNewHorizons:GTNHLib:0.11.52:dev')
+    // Mixin 编译依赖（Sponge Mixin —— 用 Maven 坐标，不要 files()）
+    compileOnly("org.spongepowered:mixin:0.8.5")
+    
 }
